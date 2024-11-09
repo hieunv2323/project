@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import OrderItem from './OrderItem';
 import PrintOrder from './PrintOrder';
 
-
 const initialOrders = [
   {
     id: 1,
@@ -14,16 +13,7 @@ const initialOrders = [
       { id: 2, name: 'Sản phẩm B', price: 200, quantity: 1 },
     ],
   },
-  {
-    id: 2,
-    name: 'Đơn hàng 2',
-    customerName: 'Nguyễn Văn Tuyệt',
-    amount: 450,
-    products: [
-      { id: 3, name: 'Sản phẩm C', price: 150, quantity: 2 },
-      { id: 4, name: 'Sản phẩm D', price: 150, quantity: 1 },
-    ],
-  },
+
 ];
 
 
@@ -38,7 +28,7 @@ const OrderList = () => {
           <OrderItem key={order.id} order={order} />
         ))}
       </ul>
-      <PrintOrder orders={orders} />
+ <PrintOrder orders={orders} />
     </div>
   );
 };
