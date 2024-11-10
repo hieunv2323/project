@@ -1,38 +1,23 @@
 import React, { useState } from 'react';
-import OrderList from './OrderList';
 import AddOrderForm from './AddOrderForm';
+import OrderList from './OrderList';
 
-function App () {
-  const [orders, setOrders] = useState([
-    {
-      id: 1,
-      name: '',
-      customerName: '',
-      amount: 300,
-      products: [
-        { id: 1, name: '', price: 100, quantity: 1 },
-        { id: 2, name: '', price: 200, quantity: 1 },
-      ],
-    },
-  ]);
+function App() {
+  const [orders, setOrders] = useState([]);
 
- // Hàm thêm đơn hàng vào danh sách
- const addOrder = (inputIdentifier, newOrder) => {
-  setOrders(prevOrders => {
-    return{
-    ...prevOrders,
-    [inputIdentifier]: +newOrder
-    }
-  })
-};
+  // Hàm thêm đơn hàng vào danh sách
+  const addOrder = (newOrder) => {
+    setOrders((prevOrders) => [...prevOrders, newOrder]);  // Cập nhật orders an toàn
+  };
 
   return (
     <div>
       <h1>Quản Lý Đơn Hàng</h1>
       <AddOrderForm addOrder={addOrder} />
       <OrderList orders={orders} />
+      
     </div>
   );
-};
+}
 
 export default App;

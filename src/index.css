@@ -43,9 +43,6 @@ body {
   background: linear-gradient(180deg, #f7e6c2, #e0c4a8); /* Thay đổi màu nền của khung nhập liệu */
 }
 
-
-
-
 #user-input input {
   width: 100%;
   padding: 0.5rem;
@@ -55,6 +52,14 @@ body {
   color: #4b3832; /* Màu chữ trong input */
   font-size: 1rem;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 5vh; /* Để căn giữa dọc với chiều cao toàn màn hình */
+}
+
 
 .button {
   background-color: #f5f5dc; /* Màu be */
@@ -92,6 +97,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  margin-top: 10px;
 }
 
 .buttonmini:hover {
@@ -104,4 +110,103 @@ body {
   background-color: #d3d3c2; /* Màu be tối hơn khi nhấn */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Giảm đổ bóng khi nhấn */
   transform: translateY(2px); /* Hiệu ứng nhấn xuống */
+}
+
+/* Căn chỉnh cho danh sách đơn hàng */
+.order-list {
+  width: 80%;
+  margin: 20px auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.order-list h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Kiểu cho từng đơn hàng */
+.order-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  padding-bottom: 50px; /* Tăng khoảng trống để tránh bị đè */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Kiểu cho tiêu đề và thông tin */
+.order-item h3 {
+  font-size: 1.4em;  
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.order-item p {
+  margin: 5px 0;
+}
+
+/* Tổng số tiền ở góc phải, thêm khoảng cách phía trên */
+.total-amount {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-top: 30px;
+  color: #0066cc;
+}
+
+/* Kiểu cho danh sách sản phẩm */
+.product-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.product-list li {
+  color: #333;
+  padding: 5px 0;
+}
+
+.order-label {
+  font-size: 14px;
+  color: #333;            /* Màu chữ */
+  margin-right: 10px;     /* Khoảng cách với ô input */
+  display: inline-block;
+}
+
+.print-order-button {
+  background-color: #4CAF50; /* Màu nền xanh lá */
+  color: white;              /* Màu chữ trắng */
+  border: none;              /* Không có viền */
+  padding: 12px 24px;        /* Khoảng cách trong nút */
+  font-size: 16px;           /* Kích thước chữ */
+  font-weight: bold;         /* Đậm chữ */
+  border-radius: 8px;        /* Bo góc */
+  cursor: pointer;          /* Con trỏ thay đổi khi di chuột */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+.print-order-button:hover {
+  background-color: #45a049; /* Màu nền khi hover */
+  transform: scale(1.05);      /* Tăng kích thước một chút khi hover */
+}
+
+.print-order-button:active {
+  background-color: #388e3c;  /* Màu nền khi nhấn */
+  transform: scale(0.98);      /* Giảm kích thước khi nhấn */
+}
+
+.center{
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
 }

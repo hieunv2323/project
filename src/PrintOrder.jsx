@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
-import './index.css'
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import "./index.css";
 
 const PrintOrder = ({ orders }) => {
   const componentRef = useRef();
@@ -11,10 +11,12 @@ const PrintOrder = ({ orders }) => {
 
   return (
     <div>
-      <div id = "button" >
-      <button className="button" onClick={handlePrint} >In Đơn Hàng</button>
+      <div id="button">
+        <button className="button" onClick={handlePrint}>
+          In Đơn Hàng
+        </button>
       </div>
-      <div style={{ display: 'none' }}>
+      <div style={{ display: "none" }}>
         <div ref={componentRef}>
           <h2>Đơn Hàng</h2>
           <ul>
@@ -27,7 +29,8 @@ const PrintOrder = ({ orders }) => {
                 <ul>
                   {order.products.map((product) => (
                     <li key={product.id}>
-                      {product.name} - Giá: {product.price} VNĐ - Số lượng: {product.quantity}
+                      {product.name} - Giá: {product.price} VNĐ - Số lượng:{" "}
+                      {product.quantity}
                     </li>
                   ))}
                 </ul>
