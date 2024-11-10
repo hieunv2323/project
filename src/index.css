@@ -26,6 +26,10 @@ body {
 }
 
 h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 10vh; 
   letter-spacing: 0.15rem;
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
@@ -69,4 +73,28 @@ li h2 {
 li p {
   font-size: 0.9rem;
   color: #474034;
+}
+.print {
+  background-color: #f5f5dc; /* Màu be */
+  color: #333; /* Màu chữ */
+  border: 2px solid #d3d3c2; /* Viền màu be đậm hơn */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px; /* Bo góc */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+}
+
+.button:hover {
+  background-color: #e0e0b8; /* Màu be đậm hơn khi hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Đổ bóng mạnh hơn khi hover */
+  color: #111; /* Đổi màu chữ tối hơn một chút */
+}
+
+.button:active {
+  background-color: #d3d3c2; /* Màu be tối hơn khi nhấn */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Giảm đổ bóng khi nhấn */
+  transform: translateY(2px); /* Hiệu ứng nhấn xuống */
 }

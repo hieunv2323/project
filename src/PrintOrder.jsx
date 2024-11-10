@@ -10,14 +10,24 @@ const PrintOrder = ({ orders }) => {
 
   return (
     <div>
-      <button onClick={handlePrint}>In Đơn Hàng</button>
+      <button id ='print' onClick={handlePrint}>In Đơn Hàng</button>
       <div style={{ display: 'none' }}>
         <div ref={componentRef}>
           <h2>Đơn Hàng</h2>
           <ul>
-            {orders.map(order => (
+            {orders.map((order) => (
               <li key={order.id}>
-                {order.name} - Số tiền: {order.amount} VNĐ
+                <h3>{order.name}</h3>
+                <p>Tên khách hàng: {order.customerName}</p>
+                <p>Tổng số tiền: {order.amount} VNĐ</p>
+                <h4>Danh sách sản phẩm:</h4>
+                <ul>
+                  {order.products.map((product) => (
+                    <li key={product.id}>
+                      {product.name} - Giá: {product.price} VNĐ - Số lượng: {product.quantity}
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>
