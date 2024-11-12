@@ -1,45 +1,33 @@
-import React, { useState } from 'react';
-import OrderItem from './OrderItem';
-import PrintOrder from './PrintOrder';
+import React from 'react';
 
-
-const initialOrders = [
-  {
-    id: 1,
-    name: 'Đơn hàng 1',
-    customerName: 'Nguyễn Văn Hiếu',
-    amount: 300,
-    products: [
-      { id: 1, name: 'Sản phẩm A', price: 100, quantity: 1 },
-      { id: 2, name: 'Sản phẩm B', price: 200, quantity: 1 },
-    ],
-  },
-  {
-    id: 2,
-    name: 'Đơn hàng 2',
-    customerName: 'Nguyễn Văn Tuyệt',
-    amount: 450,
-    products: [
-      { id: 3, name: 'Sản phẩm C', price: 150, quantity: 2 },
-      { id: 4, name: 'Sản phẩm D', price: 150, quantity: 1 },
-    ],
-  },
-];
-
-
-const OrderList = () => {
-  const [orders] = useState(initialOrders);
-
+const OrderList = ({ orders }) => {
   return (
-    <div>
+  <div>
+    <div className="order-list">
       <h2>Danh Sách Đơn Hàng</h2>
-      <ul>
-        {orders.map(order => (
-          <OrderItem key={order.id} order={order} />
-        ))}
-      </ul>
-      <PrintOrder orders={orders} />
-    </div>
+        <ul>
+         {orders.map(order => (
+            <li key={order.id} className="order-item">
+              <h3>{order.name}</h3>
+              <p>Tên khách hàng: {order.customerName}</p> 
+              <h4>Danh sách sản phẩm:</h4>
+              <ul className="product-list">
+                {order.products.map(product => (
+                  <li key={product.id}>
+                    {product.name} - Giá: {product.price} VNĐ - Số lượng: {product.quantity}
+                  </li>
+                ))}
+                <p className = "total-amount" >Tổng số tiền: {order.amount} VNĐ</p>
+              </ul>
+            </li>
+    ))}
+  </ul> 
+</div>
+<div className = "center">
+<button className="print-order-button">In đơn hàng</button>
+</div>
+</div>
+
   );
 };
 
