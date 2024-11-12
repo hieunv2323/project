@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,75 +6,62 @@
 
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#f6e1c4, #f3d09e);
-  color: #302b23;
+  background: radial-gradient(#f5f5dc, #fffaf0); /* Thay đổi màu nền sang tông be */
+  color: #4b3832; /* Thay đổi màu chữ sang tông tối nhẹ */
   min-height: 100vh;
 }
 
-#app {
-  margin: 2rem auto;
-  padding: 1rem;
-  max-width: 40rem;
+#header {
   text-align: center;
-  border-radius: 6px;
-  background: linear-gradient(#2a2722, #413c35);
-  color: #f4e9d7;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  margin: 3rem auto;
 }
 
-h1 {
+#header img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+ h1 {
   display: flex;
-  justify-content: center;
-  align-items: center; 
-  height: 10vh; 
-  letter-spacing: 0.15rem;
-  font-family: 'Lato', sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 10vh; /* Chiều cao của khung chứa */
+  font-size: 3rem;
+  color: #4b3832; /* Màu chữ của tiêu đề */
 }
 
-#app > p {
-  margin: 0;
-  color: #b3aa9c;
-}
-
-ul {
-  list-style: none;
-  margin: 2rem 0;
-  padding: 0;
-}
-
-li {
-  margin: 1rem auto;
-  padding: 0.5rem;
-  max-width: 20rem;
-  background: #fbd9a3;
-  color: #302b23;
+#user-input {
+  padding: 1rem;
+  max-width: 30rem;
+  margin: 2rem auto;
   border-radius: 4px;
-  text-align: left;
+  background: linear-gradient(180deg, #f7e6c2, #e0c4a8); /* Thay đổi màu nền của khung nhập liệu */
 }
 
-li h2,
-li p {
-  margin: 0;
+#user-input input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #b89e84; /* Đổi màu viền input */
+  border-radius: 0.25rem;
+  background-color: #fdf5e6; /* Nền màu be nhạt cho input */
+  color: #4b3832; /* Màu chữ trong input */
+  font-size: 1rem;
 }
 
-li h2 {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: #736957;
-  margin-bottom: 0.5rem;
+.button-container {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 5vh; /* Để căn giữa dọc với chiều cao toàn màn hình */
 }
 
-li p {
-  font-size: 0.9rem;
-  color: #474034;
-}
-.print {
+
+.button {
   background-color: #f5f5dc; /* Màu be */
   color: #333; /* Màu chữ */
   border: 2px solid #d3d3c2; /* Viền màu be đậm hơn */
@@ -97,4 +84,129 @@ li p {
   background-color: #d3d3c2; /* Màu be tối hơn khi nhấn */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Giảm đổ bóng khi nhấn */
   transform: translateY(2px); /* Hiệu ứng nhấn xuống */
+}
+
+.buttonmini {
+  background-color: #f5f5dc; /* Màu be */
+  color: #333; /* Màu chữ */
+  border: 2px solid #d3d3c2; /* Viền màu be đậm hơn */
+  padding: 6px 10px; /* Giảm padding để nút nhỏ hơn */
+  font-size: 13px; /* Giảm kích thước chữ */
+  font-weight: bold;
+  border-radius: 6px; /* Bo góc nhỏ hơn */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  margin-top: 10px;
+}
+
+.buttonmini:hover {
+  background-color: #e0e0b8; /* Màu be đậm hơn khi hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn khi hover */
+  color: #111; /* Đổi màu chữ tối hơn một chút */
+}
+
+.buttonmini:active {
+  background-color: #d3d3c2; /* Màu be tối hơn khi nhấn */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Giảm đổ bóng khi nhấn */
+  transform: translateY(2px); /* Hiệu ứng nhấn xuống */
+}
+
+/* Căn chỉnh cho danh sách đơn hàng */
+.order-list {
+  width: 80%;
+  margin: 20px auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.order-list h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Kiểu cho từng đơn hàng */
+.order-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  padding-bottom: 50px; /* Tăng khoảng trống để tránh bị đè */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Kiểu cho tiêu đề và thông tin */
+.order-item h3 {
+  font-size: 1.4em;  
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.order-item p {
+  margin: 5px 0;
+}
+
+/* Tổng số tiền ở góc phải, thêm khoảng cách phía trên */
+.total-amount {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-top: 30px;
+  color: #0066cc;
+}
+
+/* Kiểu cho danh sách sản phẩm */
+.product-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.product-list li {
+  color: #333;
+  padding: 5px 0;
+}
+
+.order-label {
+  font-size: 14px;
+  color: #333;            /* Màu chữ */
+  margin-right: 10px;     /* Khoảng cách với ô input */
+  display: inline-block;
+}
+
+.print-order-button {
+  background-color: #4CAF50; /* Màu nền xanh lá */
+  color: white;              /* Màu chữ trắng */
+  border: none;              /* Không có viền */
+  padding: 12px 24px;        /* Khoảng cách trong nút */
+  font-size: 16px;           /* Kích thước chữ */
+  font-weight: bold;         /* Đậm chữ */
+  border-radius: 8px;        /* Bo góc */
+  cursor: pointer;          /* Con trỏ thay đổi khi di chuột */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+.print-order-button:hover {
+  background-color: #45a049; /* Màu nền khi hover */
+  transform: scale(1.05);      /* Tăng kích thước một chút khi hover */
+}
+
+.print-order-button:active {
+  background-color: #388e3c;  /* Màu nền khi nhấn */
+  transform: scale(0.98);      /* Giảm kích thước khi nhấn */
+}
+
+.center{
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
 }
