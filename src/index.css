@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -6,10 +6,13 @@
 
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(#f5f5dc, #fffaf0); /* Thay đổi màu nền sang tông be */
+  background: radial-gradient(
+    #f5f5dc,
+    #fffaf0
+  ); /* Thay đổi màu nền sang tông be */
   color: #4b3832; /* Thay đổi màu chữ sang tông tối nhẹ */
   min-height: 100vh;
 }
@@ -26,7 +29,7 @@ body {
   background-color: transparent;
 }
 
- h1 {
+h1 {
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
   align-items: center; /* Căn giữa theo chiều dọc */
@@ -40,7 +43,11 @@ body {
   max-width: 30rem;
   margin: 2rem auto;
   border-radius: 4px;
-  background: linear-gradient(180deg, #f7e6c2, #e0c4a8); /* Thay đổi màu nền của khung nhập liệu */
+  background: linear-gradient(
+    180deg,
+    #f7e6c2,
+    #e0c4a8
+  ); /* Thay đổi màu nền của khung nhập liệu */
 }
 
 #user-input input {
@@ -59,7 +66,6 @@ body {
   align-items: center; /* Căn giữa theo chiều dọc */
   height: 5vh; /* Để căn giữa dọc với chiều cao toàn màn hình */
 }
-
 
 .button {
   background-color: #f5f5dc; /* Màu be */
@@ -142,7 +148,7 @@ body {
 
 /* Kiểu cho tiêu đề và thông tin */
 .order-item h3 {
-  font-size: 1.4em;  
+  font-size: 1.4em;
   margin-bottom: 10px;
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
@@ -178,35 +184,117 @@ body {
 
 .order-label {
   font-size: 14px;
-  color: #333;            /* Màu chữ */
-  margin-right: 10px;     /* Khoảng cách với ô input */
+  color: #333; /* Màu chữ */
+  margin-right: 10px; /* Khoảng cách với ô input */
   display: inline-block;
 }
 
 .print-order-button {
-  background-color: #4CAF50; /* Màu nền xanh lá */
-  color: white;              /* Màu chữ trắng */
-  border: none;              /* Không có viền */
-  padding: 12px 24px;        /* Khoảng cách trong nút */
-  font-size: 16px;           /* Kích thước chữ */
-  font-weight: bold;         /* Đậm chữ */
-  border-radius: 8px;        /* Bo góc */
-  cursor: pointer;          /* Con trỏ thay đổi khi di chuột */
+  background-color: #4caf50; /* Màu nền xanh lá */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Không có viền */
+  padding: 12px 24px; /* Khoảng cách trong nút */
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: bold; /* Đậm chữ */
+  border-radius: 8px; /* Bo góc */
+  cursor: pointer; /* Con trỏ thay đổi khi di chuột */
   transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+  margin-bottom: 20px;
 }
 
 .print-order-button:hover {
   background-color: #45a049; /* Màu nền khi hover */
-  transform: scale(1.05);      /* Tăng kích thước một chút khi hover */
+  transform: scale(1.05); /* Tăng kích thước một chút khi hover */
 }
 
 .print-order-button:active {
-  background-color: #388e3c;  /* Màu nền khi nhấn */
-  transform: scale(0.98);      /* Giảm kích thước khi nhấn */
+  background-color: #388e3c; /* Màu nền khi nhấn */
+  transform: scale(0.98); /* Giảm kích thước khi nhấn */
 }
 
-.center{
+.center {
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
   align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.product-image {
+  width: 100px; /* Đặt kích thước phù hợp */
+  height: auto;
+  margin-top: 5px;
+}
+
+.delete-order-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.delete-order-button:hover {
+  background-color: #ff0000;
+}
+
+/* Phong cách cho Modal dialog */
+dialog {
+  position: fixed; /* Đặt vị trí cố định để modal luôn nằm ở trung tâm */
+  background-color: white; /* Màu nền của modal */
+  border: none; /* Loại bỏ đường viền mặc định */
+  border-radius: 8px; /* Bo tròn các góc của modal */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.06); /* Hiệu ứng đổ bóng */
+  padding: 20px; /* Khoảng cách bên trong modal */
+  z-index: 1000; /* Đặt modal lên trên các thành phần khác */
+  max-width: 90%; /* Đặt chiều rộng tối đa cho modal */
+  min-width: 300px; /* Đặt chiều rộng tối thiểu cho modal */
+}
+
+/* Phong cách cho backdrop (nền mờ phía sau modal) */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+  backdrop-filter: blur(5px); /* Hiệu ứng làm mờ nền */
+}
+
+/* Phong cách cho tiêu đề trong modal */
+dialog h2 {
+  font-size: 1.5rem; /* Kích thước chữ của tiêu đề */
+  margin: 0 0 10px; /* Khoảng cách bên dưới tiêu đề */
+  color: #333; /* Màu chữ tiêu đề */
+  text-align: center; /* Căn giữa chữ tiêu đề */
+}
+
+/* Phong cách cho nội dung (đoạn văn) trong modal */
+dialog p {
+  font-size: 1rem; /* Kích thước chữ nội dung */
+  color: #666; /* Màu chữ nội dung */
+  margin-bottom: 20px; /* Khoảng cách bên dưới nội dung */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+/* Phong cách cho nút trong modal */
+dialog button {
+  display: block; /* Nút chiếm toàn bộ dòng */
+  margin: 0 auto; /* Căn giữa nút */
+  background-color: #007bff; /* Màu nền nút */
+  color: white; /* Màu chữ trên nút */
+  border: none; /* Loại bỏ đường viền của nút */
+  border-radius: 4px; /* Bo tròn các góc nút */
+  padding: 10px 20px; /* Khoảng cách bên trong nút */
+  font-size: 1rem; /* Kích thước chữ trên nút */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột qua nút */
+  transition: background-color 0.3s ease; /* Hiệu ứng thay đổi màu khi hover */
+}
+
+/* Phong cách khi di chuột qua nút */
+dialog button:hover {
+  background-color: #0056b3; /* Màu nền nút khi hover */
+}
+
+/* Phong cách khi nhấn nút */
+dialog button:active {
+  background-color: #003f7f; /* Màu nền nút khi nhấn */
 }
